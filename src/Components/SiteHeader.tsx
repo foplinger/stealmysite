@@ -42,11 +42,6 @@ const WelcomeHeader = (props: WelcomeHeaderProps) => {
     const {classes} = props;
     return (
         <div className={classes.root}>
-            {/* <div style={{paddingLeft: '20px'}}>
-                <Typography component="h2" variant="h1" gutterBottom className={classes.h1}>
-                    Frank Oplinger
-                </Typography>
-            </div> */}
             <div 
                 style={{display: 'flex', paddingTop: '30px',
                 paddingRight: '20px', width: '45%', justifyContent: 'space-evenly'}}
