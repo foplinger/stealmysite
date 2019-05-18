@@ -11,7 +11,9 @@
     "react-particles-js": "^2.6.0",
     "react-redux": "^7.0.3",
     "react-scripts": "3.0.1",
-    "recompose": "^0.30.0"
+    "react-web-tabs": "^1.0.1",
+    "recompose": "^0.30.0",
+    "redux-devtools-extension": "^2.13.8"
   },
   "scripts": {
     "start": "react-scripts start",

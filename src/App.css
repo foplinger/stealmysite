@@ -4,6 +4,7 @@
   justify-content: space-between;
   height: 100%;
   position: relative;
+  align-items: center;
 }
 
 html,#root { height:100%; }
@@ -39,6 +40,8 @@ body {
 
 .particles {
   position: fixed;
+  height: 100%;
+  width: 100%;
   right: 0;
   right: 0;
   bottom: 0;

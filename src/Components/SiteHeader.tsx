@@ -1,7 +1,9 @@
 import React from 'react';
 import { Typography, Button } from '@material-ui/core';
 import { withStyles, createStyles } from '@material-ui/core/styles';
+import { connect } from 'react-redux';
 import { backgroundColor, headerColor, textColor, particleColor } from '../Constants';
+import { TabEventType, TabEventCreator } from '../Action/tabAction';
 
 const styles = () => createStyles({
     root: {
@@ -37,30 +39,44 @@ const styles = () => createStyles({
 });
 interface WelcomeHeaderProps {
     classes: any //tslint: disable-line
+    loadHeader: (type: string)=> void,
+    tabConfig: any
 }
-const WelcomeHeader = (props: WelcomeHeaderProps) => {
-    const {classes} = props;
-    return (
-        <div className={classes.root}>
-            <div 
-                style={{display: 'flex', paddingTop: '30px',
-                paddingRight: '20px', width: '45%', justifyContent: 'space-evenly'}}
-            >
-                <Button className={classes.h4}>
-                    Resume
-                </Button>
-
-                <Button className={classes.h4}>
-                    Projects
-                </Button>
-                
-                <Button className={classes.h4}>
-                    About me
-                </Button>
+const createTabButtons = (action: (type: string)=> void, css: any, tabConfig: any) => {
+    return Object.keys(tabConfig).map(tab => 
+        (<Button className={css.h4} onClick={() => action(tab)}>
+            {tab}
+        </Button>
+        )    
+    )
+}
+const WelcomeHeader = (props: any) => {
+    const {classes, loadHeader, tabConfig} = props;
+    if (tabConfig) {
+        return (
+            <div className={classes.root}>
+                <div 
+                    style={{display: 'flex', paddingTop: '30px',
+                    paddingRight: '20px', width: '45%', justifyContent: 'space-evenly'}}
+                >
+                    {createTabButtons(loadHeader, classes, tabConfig)}
+                </div>
             </div>
-        </div>
-        
-    );
+            
+        );
+    } else {
+        return null;
+    }
+    
 }
+const mapStateToProps = (state: any, props: {}) => ({
+    tabConfig: state && state.viewConfig && state.viewConfig.tabs
+})
+const mapDispatchToProps = ({
+    loadHeader: TabEventCreator.showTab
+})
+const ConnectedWelcomeHeader = connect(
+    mapStateToProps, mapDispatchToProps
+)(WelcomeHeader);
 
-export default withStyles(styles)(WelcomeHeader);
+export default withStyles(styles)(ConnectedWelcomeHeader);

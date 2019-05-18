@@ -22,7 +22,7 @@ const ParticleBackground = () => (
         params={{
         "particles": {
             "number": {
-                "value": 75
+                "value": 100
             },
             "opacity": {
                 "value": .8,
@@ -33,9 +33,9 @@ const ParticleBackground = () => (
                   "opacity_min": 0.1,
                   "sync": false
                 }
-              },
+            },
             "size": {
-                "value": 3
+                "value": 2
             },
             "color": {
                 "value": "#ff622b"
@@ -46,6 +46,15 @@ const ParticleBackground = () => (
                 "color":"#ff622b",
                 "opacity":0.4,
                 "width":1
+            },
+            "move": {
+              "enable": true,
+              "speed": 5,
+              "direction": "none",
+              "random": true,
+              "straight": false,
+              "out_mode": "out",
+              "bounce": false,
             }
         }
     }}/>);

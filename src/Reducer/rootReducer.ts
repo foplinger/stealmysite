@@ -1,14 +1,9 @@
-import { LoadConfigEventType, LoadConfigActionCreator } from '../Action/loadConfigEvent';
+import { combineReducers } from "redux";
+import viewConfigReducer from './viewConfigReducer';
+import tabReducer from './tabReducer';
 
-export default function rootReducer(state = {}, action: ReturnType<typeof LoadConfigActionCreator.loadConfig>) { 
-    switch(action.type) {
-        case LoadConfigEventType.configLoad: 
-        console.log(action.config);
-        return {
-            ...state,
-            viewConfig: action.config
-        }
-        default: 
-            return state;
-    }
-}
+const rootReducer = combineReducers({
+    tab: tabReducer,
+    viewConfig: viewConfigReducer});
+
+export default rootReducer;
