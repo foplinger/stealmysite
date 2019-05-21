@@ -10,6 +10,11 @@ export default function tabReducer(state = initialState, action: ReturnType<type
                 ...state,
                 openTab: action.tabType
             }
+        case TabEventType.hideTab:
+            return {
+                ...state,
+                openTab: "clear"
+            }
         default: 
             return state;
     }

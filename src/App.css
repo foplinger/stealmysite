@@ -7,7 +7,7 @@
   align-items: center;
 }
 
-html,#root { height:100%; }
+html,#root { height:100%; scroll-behavior: smooth;}
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
@@ -37,7 +37,9 @@ body {
   background-color: #fff6dd
   /* more styles */
 }
-
+.container > * {
+  flex-shrink: 0; 
+}
 .particles {
   position: fixed;
   height: 100%;
@@ -62,4 +64,63 @@ body {
   to {
     transform: rotate(360deg);
   }
+}
+.rwt__tabs[data-rwt-vertical="true"] {
+  display: flex;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.rwt__tablist:not([aria-orientation="vertical"]) {
+	border-bottom: 1px solid #ddd;
+}
+
+.rwt__tablist[aria-orientation="vertical"] {
+  display: flex;
+	flex-direction: column;
+	flex-shrink: 0;
+	flex-grow: 0;
+	border-right: 1px solid #ddd;
+  margin-right: 1rem;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.rwt__tab {
+	background: transparent;
+	border: 0;
+	font-family: inherit;
+	font-size: inherit;
+	padding: 1rem 2rem;
+  transition: background 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.rwt__tab[aria-selected="false"]:hover,
+.rwt__tab:focus {
+  outline: 0;
+  background-color: #f4f4f4;
+	background-color: rgba(0,0,0,0.05);
+}
+
+.rwt__tab[aria-selected="true"] {
+	position: relative;
+}
+
+.rwt__tab[aria-selected="true"]:after {
+	content: '';
+	position: absolute;
+}
+
+.rwt__tablist:not([aria-orientation="vertical"]) .rwt__tab[aria-selected="true"]:after {
+  bottom: -1px;
+	left: 0;
+	width: 100%;
+	border-bottom: 3px solid #ff622b;
+}
+
+.rwt__tablist[aria-orientation="vertical"] .rwt__tab[aria-selected="true"]:after {
+  right: -1px;
+  top: 0;
+  height: 100%;
+  border-right: 3px solid #ff622b;
 }

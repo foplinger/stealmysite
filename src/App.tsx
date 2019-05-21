@@ -9,7 +9,7 @@ import ParticleBackground from './Components/ParticleBackground';
 import Particles from 'react-particles-js';
 import rootReducer from './Reducer/rootReducer';
 import GetConfigComponent from './Components/GetConfig';
-import TabPane from './Components/TabPane';
+import TabWindow from './Components/Tabs/TabWindow';
 
 const store = createStore(rootReducer, devToolsEnhancer({}));
 
@@ -24,7 +24,7 @@ class App extends React.Component {
             <div className="App">
                 <SiteHeader />
                 <Profile />
-                <TabPane />
+                <TabWindow />
             </div>
         </Provider>
         

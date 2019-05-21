@@ -36,7 +36,31 @@
     },
     "tabs": {
         "RESUME": {
-            
+            "Education":{
+                "innerTabs":false,
+                "title":"Hobart College",
+                "content":{
+                    "b-0" : "Graduated in 2018 with a BS in Physics, BS in Computer Science and a minor in Environmental Studies",
+                    "img-0": "Hobart.jpg",
+                    "b-1" : "Finished with a 3.5 overall GPA and a 3.85 Computer Science GPA"
+                }
+                
+            },
+            "Work Experience": {
+
+            },
+            "Projects": {
+                
+            },
+            "Leadership Experience": {
+
+            },
+            "NCAA Experience" : {
+
+            },
+            "Skills" : {
+                
+            }
         },
         "PROJECTS": {
             

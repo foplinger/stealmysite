@@ -8,7 +8,7 @@ const styles = () => createStyles({
     root: {
         // backgroundColor: backgroundColor,
         minWidth: '100%',
-        minHeight: '100%',
+        transition: 'min-height .5s ease-out',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center'
@@ -67,11 +67,18 @@ const generateIconButtons = (css:any, buttonConfig: any) => {
     )
 }
 
+const profStyle = {
+    minWidth: '100%',
+    transition: 'min-height .5s ease-out',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center'
+}
 const Profile = (props: any) => {
-    const { classes, profileConfig } = props;
+    const { classes, profileConfig, tab } = props;
     if (profileConfig) {
         return (
-            <div className={classes.root}>
+            <div style={{...profStyle, 'minHeight': tab != "clear" ? '40%' : '100%', 'marginTop': tab != "clear" ? '20px' : '0px'}}>
                     <div className={classes.card}> 
                         <img
                             src={profileConfig && profileConfig.img && profileConfig.img.path}
@@ -97,7 +104,8 @@ const Profile = (props: any) => {
 };
 
 const mapStateToProps = (state: any,props: {}) => ({
-    profileConfig: state && state.viewConfig && state.viewConfig.profile
+    profileConfig: state && state.viewConfig && state.viewConfig.profile,
+    tab: state && state.tab && state.tab.openTab
 });
 
 const ConnectedProfile = connect(
