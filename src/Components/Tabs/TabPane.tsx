@@ -10,9 +10,6 @@ interface TabPaneProps {
     openMainTab: string
 }
 
-const getTabPanelContent = (tabConfig) => {
-
-}
 class TabPane extends React.Component<TabPaneProps, {}> {
 
     render() {

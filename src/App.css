@@ -69,6 +69,7 @@ body {
   display: flex;
   height: 100%;
   justify-content: space-between;
+  width: 100%;
 }
 
 .rwt__tablist:not([aria-orientation="vertical"]) {

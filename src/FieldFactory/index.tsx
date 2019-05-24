@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
-import { Typography } from "@material-ui/core";
+import { Typography, Tabs, Tab } from "@material-ui/core";
+import InnerTab from '../Components/Tabs/InnerTab';
 
 const splitCharacter = "-";
 const bulletCharacter = "b";
 const imgCharacter = "img";
 
 const getTabContent = (tabConfig, currentSubTab) => {
-    if(tabConfig && tabConfig.innerTabs) {
-        //Do inner tabs
+    if(tabConfig && tabConfig[currentSubTab] && tabConfig[currentSubTab].innerTabs) {
+        return getTabContentWithInnerTabs(tabConfig, currentSubTab);
     } else {
         return getTabContentWithoutInnerTabs(tabConfig, currentSubTab);
     }
@@ -22,6 +23,15 @@ const generateTabBody = (content) => {
         })
     }
     return null;
+}
+
+const getTabContentWithInnerTabs = (tabConfig, currentSubTab) => {
+    
+
+    return (
+        <InnerTab /> 
+    )
+    
 }
 
 const getTabContentWithoutInnerTabs = (tabConfig, currentSubTab) => {

@@ -20,7 +20,7 @@ const styles = () => createStyles({
 
 const getRootStyle = (currentTab) => createStyles({
     root: {
-        minWidth: '80%',
+        width: '80%',
         minHeight: '500px',
         marginBottom: '200px',
         backgroundColor: iconColor,

@@ -42,12 +42,28 @@
                 "content":{
                     "b-0" : "Graduated in 2018 with a BS in Physics, BS in Computer Science and a minor in Environmental Studies",
                     "img-0": "Hobart.jpg",
-                    "b-1" : "Finished with a 3.5 overall GPA and a 3.85 Computer Science GPA"
+                    "b-1" : "Finished with a 3.5 overall GPA and a 3.85 Computer Science GPA",
+                    "b-2": "Course work included: Data Structures & Algorithms, Foundations of Computer, Compilers, Robotics, Software Engineering, Eletronics,  & Web development"
                 }
                 
             },
             "Work Experience": {
-
+                "innerTabs":true,
+                "Strategic Solutions Group": {
+                    "title":"Software Engineer",
+                    "content":{
+                        "h-0": "SSG Casetivity Case Tracking Software",
+                        "b-0": "Developed front end features using React for SSG’s Casetivity work flow management software ",
+                        "h-1": "SSG MIIS Immunization Program Software",
+                        "b-2": "Worked as a back end Spring Developer to create multiple features and support SSG’s MIIS vaccination tracking software which maintains the entire state of Massachusetts vaccination records "
+                    }
+                },
+                "SpotX": {
+                    "title":"Software Engineer Itern",
+                    "content":{
+                        "b-0":"Worked in a full-stack web development team writing features and fixing bugs for the SpotX publisher tools, admin tools and SpotX public-facing API using AngularJS, PHP and SQL "
+                    }
+                }
             },
             "Projects": {
                 
