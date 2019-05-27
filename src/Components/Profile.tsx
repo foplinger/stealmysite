@@ -61,7 +61,7 @@ const styles = () => createStyles({
 
 const profStyle = {
     minWidth: '100%',
-    transition: 'margin-top .75s linear',
+    transition: 'margin-top .5s linear',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
