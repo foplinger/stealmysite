@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Tabs, Tab, TabPanel, TabList } from 'react-web-tabs';
 import { createStyles, withStyles } from "@material-ui/core";
-import { particleColor } from '../../Constants';
+import { particleColor, textColor, backgroundColor, iconColor } from '../../Constants';
 
 import getTabContent from '../../FieldFactory';
 
@@ -13,7 +13,7 @@ const getTabHeader = (tabConfig, currentSubTab, openMainTab) => {
         
         if(currentSubTab && mainTabConfig[currentSubTab] && !mainTabConfig[currentSubTab].innerTabs) {
             return (
-                <div style={{width: '', height: '10%', backgroundColor: particleColor, marginTop: '50px'}}/>
+                <div style={{width: '', height: '41px', backgroundColor: backgroundColor, marginTop: '50px', borderBottom: '1px solid '.concat(particleColor)}}/>
             );
         }
         

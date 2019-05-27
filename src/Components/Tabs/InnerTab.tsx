@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Typography,createStyles, withStyles, Button } from "@material-ui/core";
 import { Tabs, Tab, TabPanel, TabList } from 'react-web-tabs';
 import { getTabContentWithoutInnerTabs } from '../../FieldFactory';
-import { particleColor } from '../../Constants';
+import { particleColor, textColor, cardColor, iconColor, backgroundColor } from '../../Constants';
 
 const styles = () => createStyles({
     root: {
@@ -15,11 +15,21 @@ const styles = () => createStyles({
         alignItems: 'center'
     },
     buttonContainer: {
-        backgroundColor: particleColor,
+        backgroundColor: backgroundColor,
         width: '100%',
+        borderBottom: '1px solid '.concat(particleColor),
         display: 'flex',
-        justifyContent: 'center',
-        height: '10%'
+        justifyContent: 'space-evenly',
+        
+        alignItems: 'center'
+    },
+    btn : {
+       
+        backgroundColor: backgroundColor,
+        fontSize: '15px',
+            
+        minWidth: '25%',
+        fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif'
     }
 })
 interface InnerTabProps {
@@ -30,6 +40,7 @@ interface InnerTabProps {
 interface InnerTabState {
     currentTab: string
 }
+
 class InnerTab extends React.Component<InnerTabProps, InnerTabState> {
     
     constructor(props) {
@@ -50,9 +61,12 @@ class InnerTab extends React.Component<InnerTabProps, InnerTabState> {
                 if(button !== 'innerTabs'){
     
                     return(
-                        <Button onClick={() => this.handleChange(button)}>
-                            {button}
-                        </Button>);
+                        <div style={button === this.state.currentTab ? { borderRadius: '5px 5px 0px 0px',border: '1px solid '.concat(particleColor), borderBottom: '1px solid '.concat(backgroundColor)} : {}}>
+                            <Button className={this.props && this.props.classes && this.props.classes.btn} onClick={() => this.handleChange(button)}>
+                                {button} 
+                            </Button>
+                        </div>
+                        );
                 } 
             });
         }

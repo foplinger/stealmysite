@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Tabs, Tab, TabPanel, TabList } from 'react-web-tabs';
 import { createStyles, withStyles, IconButton } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
-import { textColor, iconColor } from '../../Constants'
+import { textColor, iconColor, backgroundColor } from '../../Constants'
 import 'react-web-tabs/dist/react-web-tabs.css';
 import { TabEventCreator } from '../../Action/tabAction';
 import TabPane from './TabPane';
@@ -14,11 +14,14 @@ const getRootStyle = (currentTab) => createStyles({
         height: 'auto',
         minHeight: '500px',
         marginBottom: '200px',
-        backgroundColor: iconColor,
+        marginTop: '5%',
+        backgroundColor: backgroundColor,
         clear:"both",
         display: currentTab == "clear" ? 'none' : 'flex',
         alignItems: 'flex-start',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        borderRadius: '25px',
+        border: '2px solid '.concat(iconColor)
     }
 });
 interface TabWindowProps {

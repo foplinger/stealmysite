@@ -61,7 +61,7 @@ const styles = () => createStyles({
 
 const profStyle = {
     minWidth: '100%',
-    transition: 'min-height .5s ease-out',
+    transition: 'margin-top .75s linear',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
@@ -71,7 +71,7 @@ const Profile = (props: any) => {
     const { classes, profileConfig, tab } = props;
     if (profileConfig) {
         return (
-            <div style={{...profStyle, 'minHeight': tab != "clear" ? '40%' : '100%', 'marginTop': tab != "clear" ? '20px' : '0px'}}>
+            <div style={{...profStyle, 'marginTop': tab != "clear" ? '2%' : '15%'}}>
                     <div className={classes.card}> 
                         <img
                             src={profileConfig && profileConfig.img && profileConfig.img.path}

@@ -10,7 +10,7 @@
             }
         },
         "subtitle": {
-            "value": "Software Engineer ... put something else here",
+            "value": "Software Engineer based in Boston, MA",
             "css": {
 
             }
@@ -140,6 +140,13 @@
             }
         },
         "ABOUT ME":{
+            "About Me": {
+                "innerTabs": false,
+                
+                "content":{
+                    "p-0": "I am a software engineer currently working at SSG in Needham, MA."
+                }
+            }
 
         }
     }
