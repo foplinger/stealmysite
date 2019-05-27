@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import EmailIcon from '@material-ui/icons/Email';
 import { createStyles, withStyles, IconButton, Icon, Typography, SvgIcon } from '@material-ui/core';
 import { backgroundColor, cardColor, textColor, particleColor } from '../Constants';
+import {generateIconButtons} from '../FieldFactory/IconButtons';
 
 const styles = () => createStyles({
     root: {
@@ -11,7 +12,8 @@ const styles = () => createStyles({
         transition: 'min-height .5s ease-out',
         display: 'flex',
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        
     },
     img: {
         borderRadius: '50%',
@@ -57,22 +59,13 @@ const styles = () => createStyles({
 
 })
 
-const generateIconButtons = (css:any, buttonConfig: any) => {
-    return Object.keys(buttonConfig).map((button:any) => 
-        <IconButton className={css.hover}>
-            <SvgIcon  className={css.icon}>
-                <path d={buttonConfig[button].path} />
-            </SvgIcon>
-        </IconButton>
-    )
-}
-
 const profStyle = {
     minWidth: '100%',
     transition: 'min-height .5s ease-out',
     display: 'flex',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    margin: '5px'
 }
 const Profile = (props: any) => {
     const { classes, profileConfig, tab } = props;

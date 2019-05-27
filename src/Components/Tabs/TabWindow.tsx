@@ -8,19 +8,10 @@ import 'react-web-tabs/dist/react-web-tabs.css';
 import { TabEventCreator } from '../../Action/tabAction';
 import TabPane from './TabPane';
 
-const styles = () => createStyles({
-    root: {
-        // backgroundColor: backgroundColor,
-        minWidth: '80%',
-        minHeight: '500px',
-        marginBottom: '200px',
-        backgroundColor: iconColor
-    }
-});
-
 const getRootStyle = (currentTab) => createStyles({
     root: {
         width: '80%',
+        height: 'auto',
         minHeight: '500px',
         marginBottom: '200px',
         backgroundColor: iconColor,
@@ -74,12 +65,7 @@ class TabWindow extends React.Component<TabWindowProps, TabWindowState> {
     }
     scrollToMyRef = () => window.scrollTo(0, this.myRef.current.offsetTop)
     render() {
-        // if (this.props.currentTab != "clear" && this.scrolledOnce) {
-        //     this.scrollToMyRef();
-        //     this.scrolledOnce = false;
-        // } else if (this.props.currentTab == "clear") {
-        //     this.scrolledOnce = true;
-        // }
+
         const {currentTab, tabs} = this.props;
 
         if (tabs) {
@@ -116,4 +102,4 @@ const mapDispatchToProps = ({
 
 const ConnectedTabWindow = connect(mapStateToProps, mapDispatchToProps)(TabWindow);
 
-export default withStyles(styles)(ConnectedTabWindow);
+export default ConnectedTabWindow;
